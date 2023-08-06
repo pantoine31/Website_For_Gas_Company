@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Προφίλ Εταιρίας</title>
+</head>
+<body>
+    
+  <nav class="menu">
+    <div class="hamburger">
+      <div class="hamburger-line"></div>
+      <div class="hamburger-line"></div>
+      <div class="hamburger-line"></div>
+    </div>
+    <ul>
+      <li><a href="inter1.php">Αρχικη Σελιδα</a></li>
+      <li><a href="inter2.html">Προφιλ Εταιριας</a></li>
+      <li><a href="inter3.html">Υπολογισμος Κοστους Φυσικου Αεριου</a></li>
+      <li><a href="inter4.php">Επικοινωνια</a></li>
+      <li><a href="inter5.php">Σελιδα Διαχειρισης</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    document.querySelector('.hamburger').addEventListener('click', function() {
+      document.querySelector('.menu').classList.toggle('open');
+    });
+  </script>
+
+      <!-- ABOUT US SECTION -->
+      <section class="about-us">
+        <div class="container">
+          <h2>Σχετικά με εμάς</h2>
+          <div class="grid">
+            <div class="column">
+              <h3 id="par">Η φιλοσοφία μας</h3>
+              <p id="para"> Η φιλοσοφία της εταιρίας μας βασίζεται σε πολλές αξίες, όπως η αειφορία, η ασφάλεια, η αξιοπιστία 
+                  και η ποιότητα. Έτσι, μπορούμε και θέτουμε υψηλά πρότυπα στην παροχή φυσικού αερίου, 
+                  προσφέροντας ασφαλή και αξιόπιστη προμήθεια, ενώ ταυτόχρονα λαμβάνουμε υπόψη την περιβαλλοντική βιωσιμότητα.</p>
+            </div>
+            <div class="column">
+              <h3 id="par">Το όραμά μας</h3>
+              <p id="para">Το όραμα της εταιρίας μας περιλαμβάνει την προσφορά καινοτόμων λύσεων ενέργειας που θα προάγουν την αειφορία
+                 και την αποτελεσματικότητα. Εξετάζουμε επιπλέον τον ενεργό ρόλο στη μετάβαση προς ανανεώσιμες πηγές ενέργειας 
+                έτσι ώστα να συμβάλουμε στην επίτευξη μιας πιο βιώσιμης και καθαρής ενεργειακής μελλοντικής προοπτικής.</p>
+            </div>
+            <div class="column">
+              <h3 id="par">Ο στόχος μας</h3>
+              <p id="para">Ο στόχος της εταιρίας μας είναι η κάλυψη των αναγκών των πελατών μας σε ενέργεια, παρέχοντας τους αξιόπιστη
+                 και ασφαλή προμήθεια φυσικού αερίου. Επιπλέον, ο στόχος μας περιλαμβάνει την προώθηση της χρήσης καθαρής ενέργειας
+                 και τη μείωση των εκπομπών αερίων, συμβάλλοντας έτσι στην προστασία του περιβάλλοντος.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TEAM-->
+      <section class="team">
+        <div class="container">
+          <h2>Ανθρώπινο Δυναμικό</h2>
+          <div class="grid2">
+            <div class="column">
+              <h3 id="par">Τμήμα Υποστήριξης</h3>
+              <p id="para">Το τμήμα υποστήριξης ασχολείται με την παροχή βοήθειας και υποστήριξης στους πελάτες μιας εταιρίας. 
+                Οι υπάλληλοι σε αυτό το τμήμα απαντούν σε ερωτήματα, επιλύουν προβλήματα και παρέχουν τεχνική υποστήριξη, 
+                προσφέροντας ένα υψηλό επίπεδο εξυπηρέτησης προς τους πελάτες.</p>
+            </div>
+            <div class="column">
+              <h3 id="par">Τμήμα Πωλήσεων</h3>
+              <p id="para">Το τμήμα πωλήσεων είναι υπεύθυνο για την προώθηση και την πώληση των προϊόντων ή υπηρεσιών της εταιρίας.
+                 Οι εκπρόσωποι πωλήσεων επικοινωνούν με πελάτες, 
+                διαπραγματεύονται συμβάσεις, προωθούν τα προϊόντα και παρέχουν πληροφορίες για τα πλεονεκτήματα και τις λειτουργίες τους.</p>
+            </div>
+            <div class="column">
+              <h3 id="par">Τμήμα Βλαβών</h3>
+              <p id="para">Το τμήμα βλαβών ασχολείται με την αντιμετώπιση και την επιδιόρθωση πιθανών βλαβών ή προβλημάτων 
+                που μπορεί να αντιμετωπίζουν οι πελάτες. Οι υπάλληλοι σε αυτό το τμήμα ανταποκρίνονται σε επείγουσες καταστάσεις, 
+                εκτελούν επισκευές και διασφαλίζουν ότι οι πελάτες λαμβάνουν την απαραίτητη βοήθεια.</p>
+            </div>
+            <div class="column">
+              <h3 id="par">Λογιστήριο</h3>
+              <p id="para">Το τμήμα λογιστηρίου ασχολείται με την οικονομική και χρηματοοικονομική διαχείριση της εταιρίας. 
+                Οι λογίστες είναι υπεύθυνοι για την καταγραφή και ανάλυση των οικονομικών δεδομένων,
+                 την εκπόνηση των οικονομικών καταστάσεων, τη διαχείριση του μισθολογικού και των οικονομικών διαδικασιών.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CALCULATOR-->
+      <section class="cost-calculation">
+        <div class="container">
+          <h2>Υπολογισμός Κόστους Φυσικού Αερίου</h2>
+          <p>Εδώ μπορείτε να υπολογίσετε το κόστος του φυσικού αερίου.</p>
+          <a class="cta-button" href="inter3.html" target="_blank">Υπολογισμός</a>
+        </div>
+      </section>
+
+    
+
+      <!--Footer stathero gia kathe html page-->
+      <footer>
+        <div class="cont">
+          <div class="gr2">
+            <div class="col">
+              <h3>Στοιχεία Επικοινωνίας</h3>
+              <ul class="c">
+                <li><a  href="tel:6986680496">Τηλέφωνο: 6986680496</a></li>
+                <li><a  href="mailto:antonhspap@icloud.com">Email: antonhspap@icloud.com</a></li>
+              </ul>
+            </div>
+            <div class="col">
+              <h4>Χάρτης</h4>
+              <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3145.5409907289077!2d23.696532576491315!3d37.964502301207325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1bcf6b6876267%3A0xd3eda5fbbbcffe97!2zzqfPgc-Fz4POv8-Dz4TPjM68zr_PhSDOo868z43Pgc69zrfPgiAxNywgzqTOsc-Nz4HOv8-CIM6Rz4TPhM65zrrOrs-CIDE3NyA3OA!5e0!3m2!1sel!2sgr!4v1684270196121!5m2!1sel!2sgr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="f">© 2023 My Webpage for HTML lesson. All rights reserved to Antonis Papakonstantinou.</p>
+      </footer>
+    
+</body>
+</html>
