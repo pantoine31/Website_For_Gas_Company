@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Υπολογισμός Κόστους Φυσικού Αερίου</title>
+    <script src="calculate.js"></script>
+
+
+
+</head>
+<body>
+ 
+  <nav class="menu">
+    <div class="hamburger">
+      <div class="hamburger-line"></div>
+      <div class="hamburger-line"></div>
+      <div class="hamburger-line"></div>
+    </div>
+    <ul>
+      <li><a href="inter1.html">Αρχικη Σελιδα</a></li>
+      <li><a href="inter2.html">Προφιλ Εταιριας</a></li>
+      <li><a href="inter3.html">Υπολογισμος Κοστους Φυσικου Αεριου</a></li>
+      <li><a href="inter4.html">Επικοινωνια</a></li>
+      <li><a href="inter5.php">Σελιδα Διαχειρισης</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    document.querySelector('.hamburger').addEventListener('click', function() {
+      document.querySelector('.menu').classList.toggle('open');
+    });
+  </script>
+
+      <h1>Καλωσήρθατε στη σελίδα για τον υπολογισμό του κόστους!</h1>
+
+<p class="parr">Το Τελικό Ποσό Κατανάλωσης Φυσικού Αερίου υπολογίζεται σύμφωνα με τους παρακάτω πίνακες και
+  εν συναρτήσει των συνολικών Κιλοβατώρων που καταναλώνει ο εκάστοτε καταναλωτής, των
+  συνολικών τετραγωνικών του οικήματος καθώς και του πλήθους ημερών κατά τις οποίες κατανάλωσε
+  τις συγκεκριμένες κιλοβατώρες.</p>
+
+
+
+
+<!--Enswmatomeno css gia ta tables -->
+<style>
+  /* Table 1 */
+  .table1 {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #b1c4d6;
+  }
+
+  .table1 th,
+  .table1 td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .table1 th {
+    background-color: #f2f2f2;
+  }
+
+  /* Table 2 */
+  .table2 {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #b1c4d6;
+  }
+
+  .table2 th,
+  .table2 td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .table2 th {
+    background-color: #f2f2f2;
+  }
+</style>
+
+<!--Tables gia na deiksoume ston xristi tis xrewseis -->
+
+<!-- Table 1-->
+<h2>Πίνακας 1</h2>
+  <table class="table1">
+    <tr>
+      <th>Κατανάλωση σε Κιλοβατώρες (kWh)</th>
+      <th>Χρέωση Ενέργειας(€/kWh)</th>
+      <th>Υπηρεσίες Κοινής Ωφέλειας(ΥΚΩ) (€/kWh)</th>
+    </tr>
+    <tr>
+      <td>0-1600</td>
+      <td>0,00623 € / kWh</td>
+      <td>0,01315 € / kWh</td>
+    </tr>
+    <tr>
+      <td>1601-2000</td>
+      <td>0,00768 € / kWh</td>
+      <td>0,01480 € / kWh</td>
+    </tr>
+    <tr>
+      <td>>2000</td>
+      <td>0,00915 € / kWh</td>
+      <td>0,01625 € / kWh</td>
+    </tr>
+  </table>
+
+  <!--Table 2-->
+
+  <h2>Πίνακας 2</h2>
+  <table class="table2">
+    <tr>
+      <th>Τετραγωνικά Μέτρα (τμ)</th>
+      <th>Χρεώσεις Δήμου (€/τμ)</th>
+      
+    </tr>
+    <tr>
+      <td>0-50</td>
+      <td>0,12 € / τμ</td>
+    </tr>
+    <tr>
+      <td>50-90</td>
+      <td>0,20 € / τμ</td>
+    </tr>
+    <tr>
+      <td>>90</td>
+      <td>0,31 € / τμ</td>
+    </tr>
+  </table>
+
+
+
+<!--Form gia ypologismo kostous-->
+
+<div class="form-container">
+  <h2 class="h2">Υπολογισμός κόστους κατανάλωσης</h2>
+  <form id="calc">
+    <div class="form-group">
+      <label for="kWh">Κιλοβατώρες:</label>
+      <input type="number" id="kWh" name="kWh" required>
+    </div>
+    <div class="form-group">
+      <label for="days">Ημέρες:</label>
+      <input type="number" id="days" name="days" required>
+    </div>
+    <div class="form-group">
+      <label for="area">Μέγεθος χώρου (τ.μ.):</label>
+      <input type="number" id="area" name="area" required>
+    </div>
+    <div class="form-group">
+      <button id="submit" class="btn" onclick="showAlert()">Υπολογισμός</button>
+      
+    </div>
+  </form>
+</div>
+
+<!--Enswmatomeno css gia to form -->
+<style>
+
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+   
+  }
+  
+  .btn:hover {
+    background-color: #45a049;
+    cursor: pointer;
+  }
+  
+  .btn:active {
+    background-color: #3e8e41;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 22px;
+    background-color: #b1c4d6;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"] {
+  width: 100%;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.form-group input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+input[type="submit"]:hover{
+  background-color: #000000;
+}
+ .h2{
+  text-decoration: none;
+  padding-top: 20px;
+ }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+      <!--Footer stathero gia kathe html page-->
+      <footer>
+        <div class="cont">
+          <div class="gr2">
+            <div class="col">
+              <h3>Στοιχεία Επικοινωνίας</h3>
+              <ul class="c">
+                <li><a  href="tel:6986680496">Τηλέφωνο: 6986680496</a></li>
+                <li><a  href="mailto:antonhspap@icloud.com">Email: antonhspap@icloud.com</a></li>
+              </ul>
+            </div>
+            <div class="col">
+              <h4>Χάρτης</h4>
+              <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3145.5409907289077!2d23.696532576491315!3d37.964502301207325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1bcf6b6876267%3A0xd3eda5fbbbcffe97!2zzqfPgc-Fz4POv8-Dz4TPjM68zr_PhSDOo868z43Pgc69zrfPgiAxNywgzqTOsc-Nz4HOv8-CIM6Rz4TPhM65zrrOrs-CIDE3NyA3OA!5e0!3m2!1sel!2sgr!4v1684270196121!5m2!1sel!2sgr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="f">© 2023 My Webpage for HTML lesson. All rights reserved to Antonis Papakonstantinou.</p>
+      </footer>
+</body>
+</html>
